@@ -19,7 +19,7 @@ Farklı dillerdeki kodları kendi bilgisayarınızda çalıştırmak için aşa�
 #### 🔢 Hafta 1: Temel Algoritmalar
 - 📉 **`collatz.cpp`:** Collatz Sanısı (3n + 1 Problemi) çözümüdür. Sayı çiftse ikiye böler, tekse üçle çarpıp bir ekleyerek sayının 1'e ulaşma adımlarını hesaplar.
 - ✨ **`mukemmel.cpp`:** Kendisi hariç pozitif tam bölenlerinin toplamı kendisine eşit olan mükemmel sayıları (Örn: 6, 28) tespit eder.
-- 🔺 **`pascal.cpp`:** Önceden boyutlandırılmış 2D `vector` matrisi kullanarak Pascal Üçgeni oluşturur. Her sayıyı, üstündeki ve üst-soldaki hücrenin toplamı olarak hesaplar. 
+- 🔺 **`pascal.cpp`:** Önceden boyutlandırılmış 2D `vector` matrisi kullanarak Pascal Üçgeni oluşturur. Her sayıyı, üstündeki ve üst-soldaki hücrenin toplamı olarak hesaplar.
 - ✂️ **`tkm.cpp`:** İki oyuncudan alınan girişlere göre tüm ihtimalleri değerlendirerek kazananı belirleyen temel Taş-Kağıt-Makas uygulamasıdır.
 
 #### 🏛️ Hafta 2: Sınıflara (Classes) Giriş
@@ -28,7 +28,7 @@ Farklı dillerdeki kodları kendi bilgisayarınızda çalıştırmak için aşa�
 
 #### 🧮 Hafta 3: Operatör Aşırı Yükleme (Operator Overloading) ve Dinamik Bellek
 - ⚖️ **`complex.cpp`:** Karmaşık sayılar için sınıf yapısını genişleterek `+`, `-`, `*`, `[]`, `<<` ve tekli `-` operatörlerinin doğrudan nesneler üzerinde kullanılabilmesi için operatör aşırı yüklemelerini içerir.
-- 💾 **`matris.cpp`:** Dinamik bellek yönetimi (new/delete) gerektiren `Matris` sınıfı uygulamasıdır. Kopya yapıcı (copy constructor) ve atama operatöründe (operator=) sığ kopya hatasını önlemek için derin kopyalama (deep copy) mantığı kullanılmıştır. İşlemler öncesinde satır/sütun uyumluluğunu denetler, uyumsuzluk durumunda "Boyut hatasi" verir. 
+- 💾 **`matris.cpp`:** Dinamik bellek yönetimi (new/delete) gerektiren `Matris` sınıfı uygulamasıdır. Kopya yapıcı (copy constructor) ve atama operatöründe (operator=) sığ kopya hatasını önlemek için derin kopyalama (deep copy) mantığı kullanılmıştır. İşlemler öncesinde satır/sütun uyumluluğunu denetler, uyumsuzluk durumunda "Boyut hatasi" verir.
 
 ### 🟪 Haskell Klasörü (Fonksiyonel Programlama Temelleri)
 
@@ -36,3 +36,16 @@ Farklı dillerdeki kodları kendi bilgisayarınızda çalıştırmak için aşa�
 - 🎯 **`fonksiyonlar1.hs`:** Listeler üzerinde çalışan temel built-in fonksiyonların kullanımını (listenin son elemanını bulma, sondan ikinciyi bulma, ortanca elemanı indekse göre çıkarma) gösteren fonksiyonları içerir.
 - 📦 **`fonksiyonlar2.hs`:** Üç elemanlı bir çokuzludan (tuple) pattern matching yöntemiyle (`_` joker karakteri kullanarak) birinci, ikinci ve üçüncü elemanları sırasıyla döndüren fonksiyonları barındırır.
 - 🛠️ **`yenifonk.hs`:** `take`, `drop`, `length` gibi metotlarla listeyi ortadan ikiye bölen (`yariyaBol`); liste elemanlarının tam sayı ortalamasını alan (`tamsayiOrtalama`); liste üreteçleri (list comprehensions) kullanarak belirli bir aralıkta 3'e ve 5'e tam bölünenleri filtreleyen (`uceVeBeseBolunenler`) ve string metnin palindrom olup olmadığını test eden (`palindromMu`) özel fonksiyon tanımlamalarını kapsar.
+
+#### 🪆 Hafta 2: Özyinelemeli (Recursive) Fonksiyonlar ve Liste İşlemleri
+- 📏 **`uzunluk`:** `x:xs` deseni ile listeyi baş (ilk eleman) ve kuyruk (geri kalan) olarak ayırır, her adımda 1 ekleyerek kuyruğun uzunluğunu özyinelemeli olarak hesaplar.
+- ✖️ **`ciftFaktoryel`:** Çift faktöriyel (n!!) işlemini hesaplar. 1 ve 2 değerleri için durma noktası (base case) belirlenmiş olup, diğer durumlarda sayıyı `n-2` ile çarparak geriye doğru ilerler.
+- 🪞 **`palindrom`:** Listenin ilk ve son elemanının eşit olup olmadığını kontrol eder ve içte kalan alt listenin (`init xs`) palindrom olup olmadığını özyinelemeli olarak sınar.
+- 🎯 **`indistekiEleman`:** Aranan indeks 0 olana kadar listeyi sürekli bir eleman kaydırır (`_:xs`) ve indeksi 1 azaltarak istenen sıradaki elemana ulaşır.
+- 🗜️ **`compress`:** Ardışık tekrar eden elemanları teke düşürür. `x:y:xs` deseniyle yan yana duran iki elemanı karşılaştırır, eşitlerse birini atlayarak devam eder.
+- 🖨️ **`tekrarla`:** Verilen bir elemanı, belirtilen `n` sayısı kadar tekrarlayarak özyinelemeli olarak yepyeni bir liste inşa eder.
+- 🏆 **`enBuyuk`:** Listenin ilk elemanı ile kuyruk kısmının en büyük değerini (`max` fonksiyonu ile) kıyaslayarak listedeki maksimum elemanı bulur.
+- 🗑️ **`elemanSil`:** Belirtilen bir elemanı listede arar; eşleşme durumunda elemanı atlar, eşleşmezse sonuca ekleyerek hedeflenen elemanın tüm kopyalarını listeden siler.
+- 🔗 **`arayaEkle`:** Belirtilen özel bir karakteri veya elemanı (örn: '-'), listenin mevcut elemanlarının arasına tek tek yerleştirir (Örn: "PAU" -> "P-A-U").
+- 🧬 **`siraliBirlestir`:** Zaten sıralı olarak verilmiş iki farklı listeyi baştan eleman eleman karşılaştırıp (`x <= y`), yine küçükten büyüğe sıralı olacak şekilde tek bir listede birleştirir (Merge işlemi).
+- 🧹 **`tekrarlariSil`:** Listedeki tekrar eden elemanları temizler. Listedeki ilk elemanı tutar ve `elemanSil` fonksiyonunu çağırarak bu elemanın listenin geri kalanındaki tüm kopyalarını yok ederek ilerler.
