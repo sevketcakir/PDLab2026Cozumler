@@ -49,3 +49,9 @@ Farklı dillerdeki kodları kendi bilgisayarınızda çalıştırmak için aşa�
 - 🔗 **`arayaEkle`:** Belirtilen özel bir karakteri veya elemanı (örn: '-'), listenin mevcut elemanlarının arasına tek tek yerleştirir (Örn: "PAU" -> "P-A-U").
 - 🧬 **`siraliBirlestir`:** Zaten sıralı olarak verilmiş iki farklı listeyi baştan eleman eleman karşılaştırıp (`x <= y`), yine küçükten büyüğe sıralı olacak şekilde tek bir listede birleştirir (Merge işlemi).
 - 🧹 **`tekrarlariSil`:** Listedeki tekrar eden elemanları temizler. Listedeki ilk elemanı tutar ve `elemanSil` fonksiyonunu çağırarak bu elemanın listenin geri kalanındaki tüm kopyalarını yok ederek ilerler.
+
+#### 🧠 Hafta 3: Yüksek Mertebeden Fonksiyonlar (Map, Filter, Fold)
+- 🔁 **`yinele`:** `foldr` fonksiyonunu kullanarak listedeki her bir elemanı sağdan sola doğru okur ve sonuç listesine (accumulator) her elemanı iki kez ekleyerek ardışık tekrarlı yeni bir liste inşa eder.
+- 🔢 **`ciftSayiAdeti`:** `map` ile listedeki her elemanın çift olup olmadığını (True/False) belirler, ardından `filter` ile sadece 'True' olanları süzerek çift sayıların toplam miktarını (`length`) hesaplar.
+- 🪞 **`palindrom`:** `foldl` fonksiyonunun işleyiş mantığını (soldan sağa doğru çalışarak elemanları listenin başına eklemesi) kullanarak listenin tersini alır ve orijinal liste ile kıyaslayarak palindrom olup olmadığını denetler.
+- 🗜️ **`compress`:** Ardışık tekrar eden elemanları teke düşürür. `foldr` kullanarak sağdan sola ilerler, sıradaki elemanı birikmiş listenin (`acc`) başındaki eleman ile kıyaslar (`head acc`). Eşitse atlar, değilse listeye ekler. Başlangıç değeri olarak listenin son elemanı (`last liste`) kullanılır.
